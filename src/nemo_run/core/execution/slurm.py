@@ -279,6 +279,7 @@ class SlurmExecutor(Executor):
         "mem",
         "mem-per-gpu",
         "mem-per-cpu",
+        "reservation",
     ]
 
     @dataclass(kw_only=True)
@@ -296,6 +297,7 @@ class SlurmExecutor(Executor):
 
     account: str
     partition: Optional[str] = None
+    reservation: Optional[str] = None
     job_name_prefix: Optional[str] = None
     time: str = "00:10:00"
     nodes: int = 1
